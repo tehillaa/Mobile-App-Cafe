@@ -17,4 +17,8 @@ class MainActivity : AppCompatActivity() {
             insets
         }
     }
+
+
+
+    //This code is written by ...................
 }
