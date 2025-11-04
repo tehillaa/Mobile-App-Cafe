@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "684355945169",
+    "project_id": "ctec3703-74bfc",
+    "storage_bucket": "ctec3703-74bfc.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:684355945169:android:5e21a1bbb2c52ff67efbf0",
+        "android_client_info": {
+          "package_name": "com.example.cafemobileapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDD2nEwwFH3rDTloQmJ_LzCufGx9oVMBLA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:684355945169:android:26c34eb084aed6a87efbf0",
+        "android_client_info": {
+          "package_name": "com.example.firebasedemo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDD2nEwwFH3rDTloQmJ_LzCufGx9oVMBLA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
