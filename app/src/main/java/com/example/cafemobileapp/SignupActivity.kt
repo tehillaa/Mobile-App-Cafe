@@ -1,5 +1,6 @@
 package com.example.cafemobileapp
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -21,6 +22,7 @@ class SignupActivity : AppCompatActivity() {
         val passwordEditText = findViewById<EditText>(R.id.passwordEditText)
         val confirmPasswordEditText = findViewById<EditText>(R.id.confirmPasswordEditText)
         val signupButton = findViewById<Button>(R.id.signupButton)
+        val loginButton = findViewById<Button>(R.id.loginButton) // 👈 add this line
 
         signupButton.setOnClickListener {
             val email = emailEditText.text.toString().trim()
@@ -41,11 +43,19 @@ class SignupActivity : AppCompatActivity() {
                 .addOnCompleteListener { task ->
                     if (task.isSuccessful) {
                         Toast.makeText(this, "Account created successfully!", Toast.LENGTH_SHORT).show()
+                        startActivity(Intent(this, LoginActivity::class.java))
                         finish() // return to login screen
                     } else {
                         Toast.makeText(this, "Signup failed: ${task.exception?.message}", Toast.LENGTH_LONG).show()
                     }
                 }
+        }
+
+        // 👇 this part makes the "Already have an account? Login" button work
+        loginButton.setOnClickListener {
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+            finish()
         }
     }
 }

@@ -1,7 +1,12 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Base.Theme.CafeMobileApp" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your dark theme here. -->
-        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+
+    <!-- Optional: we can keep it blank or make it match the main one -->
+    <style name="Theme.CafeMobileApp" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:windowBackground">@color/creamBackground</item>
+        <item name="colorPrimary">@color/coffeeMedium</item>
+        <item name="colorPrimaryVariant">@color/coffeeDark</item>
+        <item name="colorSecondary">@color/coffeeLight</item>
+        <item name="android:textColorPrimary">@color/coffeeDark</item>
     </style>
+
 </resources>
