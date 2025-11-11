@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="8dp"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="12dp"
-    app:cardCornerRadius="16dp"
-    app:cardElevation="6dp"
-    android:backgroundTint="@color/white">
+    app:cardCornerRadius="10dp"
+    app:cardElevation="6dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -18,42 +16,89 @@
 
         <ImageView
             android:id="@+id/itemImage"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/ic_launcher_foreground"/>
+            android:contentDescription="menu image"
+            android:src="@drawable/ic_launcher_foreground" />
 
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:orientation="vertical"
-            android:layout_marginStart="12dp">
+            android:paddingStart="12dp"
+            android:paddingEnd="8dp">
 
             <TextView
                 android:id="@+id/itemName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Latte"
-                android:textColor="@color/brown"
+                android:text="Item Name"
                 android:textSize="18sp"
-                android:textStyle="bold"/>
+                android:textStyle="bold"
+                android:textColor="@color/coffeeDark" />
 
             <TextView
                 android:id="@+id/itemPrice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="£3.50"
-                android:textColor="@color/black"
-                android:textSize="16sp"/>
-        </LinearLayout>
+                android:text="£0.00"
+                android:textSize="16sp"
+                android:textColor="@color/coffeeMedium"
+                android:layout_marginTop="6dp" />
 
-        <Button
-            android:id="@+id/addToCartButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Add"
-            android:backgroundTint="@color/brown"
-            android:textColor="@android:color/white"/>
+            <!-- quantity + add row -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="10dp">
+
+                <Button
+                    android:id="@+id/btnMinus"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:text="−"
+                    android:textSize="20sp"
+                    android:backgroundTint="@color/coffeeLight"
+                    android:textColor="@android:color/white"/>
+
+                <TextView
+                    android:id="@+id/qtyText"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:text="1"
+                    android:gravity="center"
+                    android:textSize="16sp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp" />
+
+                <Button
+                    android:id="@+id/btnPlus"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:text="+"
+                    android:textSize="18sp"
+                    android:backgroundTint="@color/coffeeLight"
+                    android:textColor="@android:color/white"/>
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:id="@+id/addToCartButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:text="Add"
+                    android:backgroundTint="@color/coffeeMedium"
+                    android:textColor="@android:color/white" />
+            </LinearLayout>
+        </LinearLayout>
     </LinearLayout>
 </androidx.cardview.widget.CardView>
+
+
