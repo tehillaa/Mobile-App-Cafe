@@ -8,6 +8,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.firestore.FirebaseFirestore
+import android.content.Intent
+
 
 class CartActivity : AppCompatActivity() {
 
@@ -50,9 +52,16 @@ class CartActivity : AppCompatActivity() {
         }
 
         val order = hashMapOf(
-            "user" to (com.google.firebase.auth.FirebaseAuth.getInstance().currentUser?.email ?: "guest"),
+            "user" to (com.google.firebase.auth.FirebaseAuth.getInstance().currentUser?.email
+                ?: "guest"),
             "total" to CartManager.getTotal(),
-            "items" to items.map { mapOf("name" to it.name, "price" to it.price, "qty" to it.quantity) },
+            "items" to items.map {
+                mapOf(
+                    "name" to it.name,
+                    "price" to it.price,
+                    "qty" to it.quantity
+                )
+            },
             "status" to "Placed",
             "timestamp" to com.google.firebase.Timestamp.now()
         )
@@ -62,10 +71,13 @@ class CartActivity : AppCompatActivity() {
             .addOnSuccessListener {
                 Toast.makeText(this, "Order placed!", Toast.LENGTH_SHORT).show()
                 CartManager.clearCart()
-                refreshCart()
+
+                // ✅ Navigate to FeedbackActivity after placing order
+                val intent = Intent(this, FeedbackActivity::class.java)
+                startActivity(intent)
+                finish() // optional: closes CartActivity so it doesn’t stay in backstack
             }
-            .addOnFailureListener { e ->
-                Toast.makeText(this, "Order failed: ${e.message}", Toast.LENGTH_LONG).show()
-            }
+
     }
 }
+

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:background="#FFF8E1"
+    tools:context=".FeedbackActivity">
+
+    <TextView
+        android:id="@+id/feedbackTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="We value your feedback!"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="#5D4037"
+        android:layout_marginBottom="16dp" />
+
+    <RatingBar
+        android:id="@+id/ratingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:numStars="5"
+        android:stepSize="1.0"
+        android:layout_marginBottom="16dp" />
+
+    <EditText
+        android:id="@+id/feedbackInput"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:hint="Write your feedback here..."
+        android:background="@drawable/edittext_background"
+        android:gravity="top"
+        android:padding="12dp"
+        android:inputType="textMultiLine" />
+
+    <Button
+        android:id="@+id/submitFeedbackButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#8BC34A"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold" />
+
+</LinearLayout>
