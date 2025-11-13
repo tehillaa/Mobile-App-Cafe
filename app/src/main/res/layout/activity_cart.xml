@@ -41,4 +41,24 @@
         android:backgroundTint="@color/coffeeMedium"
         android:textColor="@color/white"/>
 
+    <Button
+        android:id="@+id/trackOrdersButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Track My Orders"
+        android:layout_marginTop="12dp"
+        android:backgroundTint="#8BC34A"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/backToMenuButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Back to Main Menu"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="#FFB74D"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold" />
+
 </LinearLayout>

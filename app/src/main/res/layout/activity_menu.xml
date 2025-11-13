@@ -26,18 +26,33 @@
         android:layout_marginTop="56dp"
         android:padding="8dp" />
 
-    <!-- Floating cart button -->
+    <!-- Floating cart button with text -->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabCart"
-        android:src="@drawable/ic_launcher_foreground"
-        android:contentDescription="Cart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:tint="@color/white"
+        android:contentDescription="Cart"
         android:layout_margin="16dp"
         android:layout_gravity="bottom|end"
         app:backgroundTint="@color/coffeeMedium"
-        app:layout_anchorGravity="bottom|end" />
+        app:srcCompat="@drawable/ic_shopping_cart"
+        app:tint="@color/white" />
+
+    <!-- Optional: Add a badge or small text overlay to show number of items -->
+    <TextView
+        android:id="@+id/cartBadge"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/badge_background"
+        android:text="0"
+        android:textSize="12sp"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:visibility="gone" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
 

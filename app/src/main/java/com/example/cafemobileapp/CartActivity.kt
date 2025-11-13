@@ -31,7 +31,20 @@ class CartActivity : AppCompatActivity() {
 
         checkoutButton.setOnClickListener {
             placeOrder()
+
         }
+
+        val backButton = findViewById<Button>(R.id.backToMenuButton)
+        backButton.setOnClickListener {
+            startActivity(Intent(this, MenuActivity::class.java))
+            finish()
+        }
+
+        val trackOrdersButton = findViewById<Button>(R.id.trackOrdersButton)
+        trackOrdersButton.setOnClickListener {
+            startActivity(Intent(this, OrdersActivity::class.java))
+        }
+
     }
 
     private fun refreshCart() {
@@ -72,11 +85,11 @@ class CartActivity : AppCompatActivity() {
                 Toast.makeText(this, "Order placed!", Toast.LENGTH_SHORT).show()
                 CartManager.clearCart()
 
-                // ✅ Navigate to FeedbackActivity after placing order
-                val intent = Intent(this, FeedbackActivity::class.java)
+                val intent = Intent(this, OrderConfirmationActivity::class.java)
                 startActivity(intent)
-                finish() // optional: closes CartActivity so it doesn’t stay in backstack
+                finish()
             }
+
 
     }
 }

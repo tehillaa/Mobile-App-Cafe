@@ -46,4 +46,15 @@
         android:textColor="#FFFFFF"
         android:textStyle="bold" />
 
+    <Button
+        android:id="@+id/backToMenuButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Back to Main Menu"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="#FFB74D"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold" />
+
+
 </LinearLayout>
